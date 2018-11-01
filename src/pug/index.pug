@@ -1,0 +1,226 @@
+extends ./base/layout.pug
+
+block content
+    #theGrid
+        //.overlay.overlay_contentpush
+            button.overlay_close.btn_menu
+                span.icon_menu--svg.cl--white.close-button
+                    svg#icon-close(viewbox='0 0 24 24' width='100%' height='100%')
+                        title close
+                        path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
+
+                span.cl--white Cerrar
+
+        .fixed_navbar
+            .submenu(style="z-index:10000;")
+                #dropdownMenu.dropdown-menu(aria-labelledby='dropdownMenuLink')
+                    a.dropdown-item(href='#') RSPV NOW
+                    a.dropdown-item(href='#') GALA DETAILS
+                    //a.dropdown-item(href='#') Something else here
+            a#dropdownMenuLink.btn_menu.cl--green.txt_upper
+                span.icon_menu--svg
+                    svg(xmlns='http://www.w3.org/2000/svg' id='line_path.svg' width='55' height='55' viewbox='0 0 55 55')
+                        defs
+                            style.
+                                .cls-1 {
+                                    fill: #fff;
+                                }
+                        circle(cx='27.5' cy='27.5' r='27.5')
+                        g#Grupo_1(data-name='Grupo 1')
+                            rect.cls-1(x='16' y='19' width='24' height='2.813')
+                            rect#sss.cls-1(x='16' y='33.188' width='24' height='2.813')
+                            rect#Rectangle_9_copy_2.cls-1(data-name='Rectangle 9 copy 2' x='16' y='25.594' width='24' height='2.813')
+
+                //span Menu
+
+
+        .wrapper
+            .page
+                .left-side.bgi.bgi--intro
+                    .icon.icon_logo
+                    .box_opening.w-100.d-block.txt_center
+                        .title.title_openin.cl--white
+                            | HONORING OUR PAST
+                            span.cl--green CELEBRATING OUR FUTURE
+                .right-side
+                    .full_container.bgc--white
+                        .txt_right
+                            button.overlay_close.btn_menu
+                                span.icon_menu--svg.cl--black.close-button
+                                    svg#icon-close(viewbox='0 0 24 24' width='55%' height='55%')
+                                        title close
+                                        path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
+                        .w-100.box_content.pd_bottom--x50.pd_top--x50
+                            .item.content_item.txt_center.hidden
+                                .icon.icon_celebrate
+                                .title.txt_upper.mg_bottom--x50
+                                    .txt_upper.cl--black.txt_size--em2 UNDER THE STARS!
+                                .intro.mg_bottom--x50
+                                    h2.txt_upper.cl--black.display-4 Friday | Nov 30, 2018
+                                .w-75.mx-auto.mb-5
+                                    .paragraf
+                                        h2.cl--black.txt_size--em3 We are so excited to <br> Celebrate with You!
+                                .acction.mg_bottom--x25
+                                    button.btn.btn_site#btnCollapseOne(type="button") View Details
+                                .txt_center.d-block.mb-5
+                                    hr.hr_site
+                                .w-100.mx-auto.mb-5
+                                    .paragraf.txt_upper
+                                        .h4.cl--black Kindly respond by November 15, 2018
+                                .acction.mg_bottom--x50
+                                    button.btn.btn_site--black#btnCollapseTwo(type="button") RVSP HERE
+                            .item.content_item.txt_center
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-50.mx-auto
+                                        .title.txt_upper.mb-3
+                                            .txt_two.txt_upper.txt_bold.cl--black.txt_size--em2a Where
+                                        .subtitle.txt_upper.mb-2.cl--gray.txt_bold.txt_spacing--x05
+                                            | Biscayne LAdy Yatch
+                                        .info.mb-2.cl--gray
+                                            span.txt_upper Bayside Market Place & Marina br
+                                            | 401 Biscayne Blvd. Miami, Florida 33132
+                                        ul.list--inline.list_link--green.mb-5
+                                            li
+                                                a.btn_link(href="#") Get Directions
+                                            li |
+                                            li
+                                                a.btn_link(href="#") Where to Park
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-50.mx-auto
+                                        .title.txt_upper.mb-3
+                                            .txt_two.txt_upper.txt_bold.cl--black.txt_size--em2a schedule
+                                        .subtitle.txt_upper.mb-2.cl--gray.txt_bold.mb-3
+                                            | From 7:00 pm to 12:00 AM
+                                        .info.mb-2.cl--gray.mb-5
+                                            | 07:00 pm - 07:30 pm.........................Boarding <br>
+                                            | 07:30 pm - 11:30 pm...........Gala Celebration <br>
+                                            | 11:30 pm - 12:00 am..................Disembarking <br>
+
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-50.mx-auto
+                                        .title.txt_upper.mb-3
+                                            .txt_two.txt_upper.txt_bold.cl--black.txt_size--em2a GUEST ATTIRE
+                                        .subtitle.txt_upper.mb-2.cl--gray.txt_bold.txt_spacing--x05
+                                            | Ladies
+                                        .info.mb-2.cl--gray.mb-5.txt_center
+                                            | Silver or Black formal cocktail dress or a long evening gown
+                                        .subtitle.txt_upper.mb-2.cl--gray.txt_bold.txt_spacing--x05
+                                            | GENTLEMEN
+                                        .info.mb-2.cl--gray.mb-5.txt_center
+                                            | Black dress pants with a button-down shirt or a formal black suit
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-50.mx-auto
+                                        .title.txt_upper.mb-3
+                                            .txt_two.txt_upper.txt_bold.cl--black.txt_size--em2a Contact us
+                                        .info.mb-2.cl--gray.mb-5.txt_center
+                                            | For more information please contact<br>
+                                            span.txt_bold.txt_upper Livia Calzadilla
+
+                            .item.txt_center.content_item.hidden
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-50.mx-auto
+                                        .title.txt_upper.mb-3
+                                            .txt_upper.txt_bold.cl--black.txt_size--em3 Where
+                                        .subtitle.txt_upper.mb-2.cl--gray.txt_bold
+                                            | Biscaline
+                                        .info.mb-2.cl--gray
+                                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        ul.list--inline.list_link--green.mb-5
+                                            li
+                                                a.btn_link(href="#") Hello
+                                            li |
+                                            li
+                                                a.btn_link(href="#") Reception
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-50.mx-auto
+                                        .title.txt_upper.mb-3
+                                            .txt_upper.txt_bold.cl--black.txt_size--em3 Schudele
+                                        .subtitle.txt_upper.mb-2.cl--gray.txt_bold
+                                            | From
+                                        .info.mb-2.cl--gray.mb-5
+                                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            .item.content_item
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-75.mx-auto
+                                        .title.txt_upper.mb-5.txt_center
+                                            .txt_upper.txt_bold.cl--black.txt_size--em3 RVSP Form
+                                        form
+                                            .row
+                                                .col
+                                                    .form-group
+                                                        label.txt_bold
+                                                            | First name
+                                                        input.form-control(type="text", placeholder="First name")
+                                                .col
+                                                    .form-group
+                                                        label.txt_bold
+                                                            | Last name
+                                                        input.form-control(type="text", placeholder="Last name")
+                                            .row
+                                                .col.mb-5
+                                                    .form-group
+                                                        label.txt_bold
+                                                            | Email
+                                                        input.form-control(type="text", placeholder="Emial")
+                                            .row
+                                                .col.mb-5
+                                                    button.btn.btn_submit(type="submit") Fin my Invitation
+                                .bdb--gains.bdb--x2.w-100.mb-5
+                                    .w-75.mx-auto
+                                        .title.txt_upper.mb-5.txt_center
+                                            .txt_upper.txt_bold.cl--black.txt_size--em3 RVSP Form
+                                        .info.data_rvsp.mb-5
+                                            i.icon.icon_check
+                                            span.txt_bold.ml-3 Yajaira Cruz
+                                            span.txt_bold and Guest
+                                        .row
+                                            .col.mb-5.resevation_form.mb-5
+                                                .txt_bold.cl--gray.mb-3 Will you be attending our Gala?
+                                                .form-check
+                                                    input#exampleRadios1.form-check-input(type='radio' name='exampleRadios' value='option1')
+                                                    label.form-check-label(for='exampleRadios1')
+                                                        | Yes, can’t wait!
+                                                .form-check
+                                                    input#exampleRadios2.form-check-input(type='radio' name='exampleRadios' value='option2')
+                                                    label.form-check-label(for='exampleRadios2')
+                                                        | Regretfully, unable to attend
+                                        .row
+                                            .col.mb-5.resevation_form
+                                                .txt_bold.cl--gray.mb-3 Will you be bringing a guest?
+                                                .form-check
+                                                    input#exampleRadios3.form-check-input(type='radio' name='oderRadios' value='option1')
+                                                    label.form-check-label(for='exampleRadios3')
+                                                        | Only me
+                                                .form-check
+                                                    input#exampleRadios4.form-check-input(type='radio' name='oderRadios' value='option2')
+                                                    label.form-check-label(for='exampleRadios4')
+                                                        | Yes, I’m bringing a guest
+                                        .row
+                                            .col.mb-5
+                                                .form-group
+                                                    label.txt_bold.cl--gray
+                                                        | Your Guest’s Name
+                                                    input.form-control(type="text", placeholder="Emial")
+                                        .row
+                                            .col.mb-5
+                                                .form-group
+                                                    label.txt_bold.cl--gray
+                                                        | What song will get you to join us on the dance floor?
+                                                    input.form-control(type="text", placeholder="Emial")
+                                        .row
+                                            .col.mb-5
+                                                button.btn.btn_submit(type="submit") submit rsvp
+                            .item.content_item
+                                .bdb--gains.bdb--x2.w-100.mg_top--x100.mg_bottom--x100
+                                    .w-75.mx-auto
+                                        .title.title_celebrate.txt_center.txt_three.cl--lightgray.txt_size--em7
+                                            span.txt_thanks Thank You
+                                        .txt_center.d-block.mb-5
+                                            hr.hr_site
+                                        .paragraf.txt_center.my-5
+                                            .txt_size--em3  We look foward to <br>  Celebrating with you!
+                                        .row
+                                            .col.mb-5
+                                                button.btn.btn_submit.w-auto(type="submit") DONE
+                    .footer.bgc--gains.fixed--bottom.txt_center
+                        .deco_elipce

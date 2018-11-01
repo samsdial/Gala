@@ -1,0 +1,28 @@
+<svg id="icon_close.svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f3f3f3;
+        fill-opacity: 0;
+        stroke: #cfd1d0;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+      }
+
+      .cls-2 {
+        fill: #969796;
+      }
+
+      .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #919292;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="20" cy="20" r="19.5"/>
+  <path class="cls-2" d="M1808.43,54.278l-0.71-.707,14.85-14.849,0.71,0.707Z" transform="translate(-1795.5 -27.5)"/>
+  <path id="Shape_5_copy" data-name="Shape 5 copy" class="cls-3" d="M1807.72,39.429l0.71-.707,14.85,14.849-0.71.707Z" transform="translate(-1795.5 -27.5)"/>
+</svg>

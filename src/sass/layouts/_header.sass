@@ -1,0 +1,51 @@
+// header
+.overlay
+    position: fixed
+    width: 100%
+    height: 100vh
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 9999
+    +MQ(M)
+        width: 65%
+    //background-color: $steelblue
+    .navbar_full
+        text-align: left
+        position: relative
+        top: 50%
+        height: 50%
+        transform: translateY(-50%)
+        padding: 0px 3.25rem
+        ul
+            list-style: none
+            padding: 0
+            margin: 0 auto
+            display: inline-block
+            height: 100%
+            position: relative
+            li
+                display: block
+                min-height: 35px
+                backface-visibility: hidden
+//a.nav-link
+
+.overlay
+    &_close
+        width: auto
+        height: 45px
+        position: relative
+        overflow: hidden
+        z-index: 100
+        span
+            color: white
+    &_contentpush
+        background: rgba($black, 0.95)
+        visibility: hidden
+        backface-visibility: hidden
+        transform: translateX(-100%)
+        transition: transform 0.5s, visibility 0s 0.5s
+        &.open
+            visibility: visible
+            transform: translateX(0%)
+            transition: transform 0.5s

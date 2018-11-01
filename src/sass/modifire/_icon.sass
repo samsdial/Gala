@@ -1,0 +1,87 @@
+@font-face
+    font-family: 'century_regular'
+    src: url('#{$fontPath}gothic-webfont.eot')
+    src: url('#{$fontPath}gothic-webfont.eot?#iefix') format('embedded-opentype'), url('#{$fontPath}gothic-webfont.ttf') format('truetype'), url('#{$fontPath}gothic-webfont.svg') format('svg')
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    font-family: 'century_bold'
+    src: url('#{$fontPath}gothicb-webfont.eot')
+    src: url('#{$fontPath}gothicb-webfont.eot?#iefix') format('embedded-opentype'), url('#{$fontPath}gothicb-webfont.ttf') format('truetype'), url('#{$fontPath}gothicb-webfont.svg') format('svg')
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    font-family: 'century_bold'
+    src: url('#{$fontPath}gothicb-webfont.eot')
+    src: url('#{$fontPath}gothicb-webfont.eot?#iefix') format('embedded-opentype'), url('#{$fontPath}gothicb-webfont.ttf') format('truetype'), url('#{$fontPath}gothicb-webfont.svg') format('svg')
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    font-family: 'candlescript'
+    src: url('#{$fontPath}candlescript_demo_version-webfont.woff2') format('woff2'), url('#{$fontPath}candlescript_demo_version-webfont.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+
+
+
+//
+//[class^="icon-"], [class*=" icon-"]
+//    font-family: 'icomoon' !important
+//    speak: none
+//    font-style: normal
+//    font-weight: normal
+//    font-variant: normal
+//    text-transform: none
+//    line-height: 1
+//    -webkit-font-smoothing: antialiased
+//    -moz-osx-font-smoothing: grayscale
+
+.icon:before
+    content: ""
+    display: inline-block
+    background-repeat: no-repeat
+    -webkit-background-size: contain
+    background-size: contain
+    background-position: 0 0
+.icon
+    &_celebrate:before
+        background-image: url('#{$gitPath}/txt_letscelebrate.png')
+        width: 416px
+        height: 174px
+    &_check:before
+        background: url("#{$gitPath}icon_check.png")
+        width: 26px
+        height: 26px
+        vertical-align: middle
+    &_logo:before
+        background: url("#{$gitPath}logo_opt.png")
+        background-repeat: no-repeat
+        -webkit-background-size: 80%
+        background-size: 80%
+        width: 197px
+        height: 57px
+        vertical-align: middle
+
+.icon_menu--svg
+    display: inline-block
+    height: 60px
+    width: 60px
+    //padding: .25rem 1.75rem
+    filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5))
+.deco
+    &_elipce
+        &:after
+            content: ""
+            display: inline-block
+            background-repeat: no-repeat
+            -webkit-background-size: contain
+            background-size: contain
+            background-position: 0 0
+            background-image: url('#{$gitPath}/deco_elipce.png')
+            width: 119px
+            height: 119px
+            position: relative
+            top: (-119px/2)

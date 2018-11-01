@@ -1,0 +1,120 @@
+// forms
+
+fieldset
+    border: none
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+    border: none
+    -webkit-text-fill-color: $blue
+    -webkit-box-shadow: 0 0 0px 1000px $white inset
+    transition: background-color 5000s ease-in-out 0s
+input
+    &.form-control
+        border-radius: 0px
+        padding: 1.2rem 1.2rem
+.resevation_form
+    .form-check
+        padding-left: 0
+        label.form-check-label
+            width: 100%
+            padding: 15px 1.5em
+            position: relative
+            width: 100%
+            height: 60px
+            vertical-align: middle
+            color: gainsboro
+            font-weight: 600
+            transform: $trs-site
+            &:after
+                content: ''
+                background: transparent
+                border: 2px solid $gainsboro
+                width: 100%
+                height: 55px
+                display: inline-block
+                border-radius: 60px
+                position: absolute
+                left: 0
+                top: 0
+                vertical-align: middle
+                cursor: pointer
+                transform: $trs-site
+        
+        input.form-check-input
+            &[type="radio"]
+                opacity: 0
+                display: none
+            &[type="radio"]:checked + label.form-check-label
+                color: $black
+                &:after
+                    border: 2px solid $green
+
+.contact_form
+    position: relative
+    from
+        width: 100%
+
+.contact_form
+    label
+        position: relative
+        width: 100%
+        display: block
+input
+    &.name
+        & + .error.i
+                &:before
+                    content: "Escriba el nombre."
+    &.lastname
+        & + .error.i
+            &:before
+                content: "Escriba el apellido."
+    &.email
+        & + .error.i
+            &:before
+                content: "Escriba el Email o Un Email Valido: info@yamaki.com.co"
+
+    &.cel
+        & + .error.i
+            &:before
+                content: "Escriba el Celular de contacto."
+    &.city
+        & + .error.i
+            &:before
+                content: "Escriba la ciudad."
+    &+error
+        &:before
+            display: none
+            transform: $trs-site
+        &i:before
+            display: block
+    &+.error.i
+        &:before
+            font-size: 10px
+            color: red
+            display: inline-block
+            text-align: right
+            padding-left: 1.3rem
+.apply.i
+    text-align: center
+    &:before
+        content: "Gracias por contactarnos. Enviado"
+        font-size: 14px
+        padding-top: 1.2rem
+        color: green
+        display: inline-block
+.apply
+    &:before
+        display: none
+        transform: $trs-site
+    &i:before
+        display: block
+
+.form_column
+    position: relative
+    display: inline-block
+    padding: 95px 15px 100px 100px
+    vertical-align: top
+    +MQMAX(S)
+        padding: 95px 15px
