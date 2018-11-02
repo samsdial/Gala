@@ -46,7 +46,7 @@ $(document).ready(function($){
         $('#collapseOne').removeClass('in');
     });
     //Acctio Form
-    var OpenAction = $('#rvsopen');
+    var OpenAction = $('.js-rvsOpen');
     OpenAction.on('click', function (e) {
         e.preventDefault();
         //console.log('Hola Tres')
@@ -54,7 +54,21 @@ $(document).ready(function($){
         changeCurrentPage();
     });
     //
-
+    var OpenAction = $('.js-details');
+    OpenAction.on('click', function (e) {
+        e.preventDefault();
+        //console.log('Hola Tres')
+        currentPage = 2;
+        changeCurrentPage();
+    });
+    //Close Section{}  #closeSection4
+    var closeSeption4 = $('.closeSection');
+    closeSeption4.on('click', function (e){
+        e.preventDefault();
+        //console.log('Hola Tres');
+        currentPage = 1;
+        changeCurrentPage();
+    });
     var $section1 = $('#section1');
     var $section2 = $('#section2');
     var $section3 = $('#section3');
@@ -120,7 +134,6 @@ $(document).ready(function($){
     let $lastName = $('#lastName');
     let $email = $('#email');
     let $validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-
     let $attendingCheckbox = $('input[name="attending"]');
     let $guestCheckbox = $('input[name="myGuest"]');
     let $findMyInvitation = $('#findMyInvitation');
@@ -138,7 +151,7 @@ $(document).ready(function($){
         } else if ($lastName.val() === "") {
             $('.lastName + .alert').removeClass('hidden');
             $lastName.focus();
-        } else if ($email.val() === "" && !$validacion_email.test($email.val())) {
+        } else if ($email.val() === "" && !$validacion_email.test($email)) {
             $('.email + .alert').removeClass('hidden');
             $email.focus();
         } else {
@@ -170,9 +183,8 @@ $(document).ready(function($){
        if (value === 'option1') {
            $minisection2.show();
        } else {
-           currentPage = 6;
+           currentPage = 7;
            changeCurrentPage();
-           $('#finallRespond').html('Thank you.');
        }
     });
 
@@ -192,7 +204,7 @@ $(document).ready(function($){
 
     $inputGuestRow.on('change keypress', 'input', function (e) {
         let val = $(this).val();
-        if (val.length   > 5) {
+        if (val.length   > 3) {
             $minisection3.show();
         }
     });

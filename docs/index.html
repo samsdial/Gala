@@ -38,7 +38,7 @@
     <div id="theGrid">
       <div class="fixed_navbar">
         <div class="submenu" style="z-index:10000;">
-          <div class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">RSPV NOW</a><a class="dropdown-item" href="#">GALA DETAILS</a>
+          <div class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item js-rvsOpen" href="#">RSPV NOW</a><a class="dropdown-item js-details" href="#">GALA DETAILS</a>
             <!--a.dropdown-item(href='#') Something else here-->
           </div>
         </div><a class="btn_menu cl--green txt_upper" id="dropdownMenuLink"><span class="icon_menu--svg">
@@ -70,8 +70,8 @@
           <div class="right-side">
             <div class="full_container bgc--white">
               <div class="w-100 box_content pd_bottom--x50">
-                <div class="item content_item txt_center" id="section1">
-                  <div class="icon icon_celebrate mg_top--"></div>
+                <div class="item content_item txt_center pt-5" id="section1">
+                  <div class="icon icon_celebrate"></div>
                   <div class="title txt_upper mg_bottom--x50">
                     <div class="txt_upper cl--black txt_size--em2">UNDER THE STARS!</div>
                   </div>
@@ -84,7 +84,7 @@
                     </div>
                   </div>
                   <div class="acction mg_bottom--x25">
-                    <button class="btn btn_site" id="btnCollapseOne" type="button">View Details</button>
+                    <button class="btn btn_site js-details" type="button">View Details</button>
                   </div>
                   <div class="txt_center d-block mb-5">
                     <hr class="hr_site">
@@ -95,12 +95,12 @@
                     </div>
                   </div>
                   <div class="acction mg_bottom--x50">
-                    <button class="btn btn_site--black" id="rvsopen" type="button">RVSP HERE</button>
+                    <button class="btn btn_site--black js-rvsOpen" type="button">RVSP HERE</button>
                   </div>
                 </div>
                 <div class="item content_item txt_center" id="section2">
                   <div class="txt_right">
-                    <button class="btn" id="closeSection2"><span class="icon icon_close close-button"></span></button>
+                    <button class="btn closeSection"><span class="icon icon_close close-button"></span></button>
                   </div>
                   <div class="bdb--gains bdb--x2 w-100 mb-5">
                     <div class="w-50 mx-auto">
@@ -110,9 +110,9 @@
                       <div class="subtitle txt_upper mb-2 cl--gray txt_bold txt_spacing--x05">Biscayne LAdy Yatch</div>
                       <div class="info mb-2 cl--gray"><span class="txt_upper">Bayside Market Place & Marina br</span>401 Biscayne Blvd. Miami, Florida 33132</div>
                       <ul class="list--inline list_link--green mb-5">
-                        <li><a class="btn_link" href="#">Get Directions</a></li>
+                        <li><a class="btn_link" href="https://www.google.com/maps/place/401+Biscayne+Blvd,+Miami,+FL+33132,+USA/@25.777468,-80.1853355,17z/data=!4m5!3m4!1s0x88d9b420599c42b5:0x4766c9b911455a89!8m2!3d25.7780573!4d-80.187095?hl=en" target="_blank">Get Directions</a></li>
                         <li>|</li>
-                        <li><a class="btn_link" href="#">Where to Park</a></li>
+                        <li><a class="btn_link" href="bayside_marketplace-bayfront_dock_map.pdf" download="whereToPark" target="_blank">Where to Park</a></li>
                       </ul>
                     </div>
                   </div>
@@ -151,11 +151,7 @@
                 </div>
                 <div class="item txt_center content_item" id="section3">
                   <div class="txt_right">
-                    <button class="overlay_close btn_menu"><span class="icon_menu--svg cl--black close-button">
-                        <svg id="icon-close" viewbox="0 0 24 24" width="55%" height="55%">
-                          <title>close</title>
-                          <path d="M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z"></path>
-                        </svg></span></button>
+                    <button class="btn closeSection"><span class="icon icon_close close-button"></span></button>
                   </div>
                   <div class="bdb--gains bdb--x2 w-100 mb-5">
                     <div class="w-50 mx-auto">
@@ -182,6 +178,9 @@
                   </div>
                 </div>
                 <div class="item content_item" id="section4">
+                  <div class="txt_right">
+                    <button class="btn closeSection"><span class="icon icon_close close-button"></span></button>
+                  </div>
                   <div class="bdb--gains bdb--x2 w-100 mb-5">
                     <div class="w-75 mx-auto">
                       <div class="title txt_upper mb-5 txt_center">
@@ -192,17 +191,15 @@
                           <div class="col">
                             <div class="form-group">
                               <label class="txt_bold">First name</label>
-                              <input class="form-control firstName" id="firstName" type="text" placeholder="First name" name="firstName">
+                              <input class="form-control firstName" id="firstName" type="text" name="firstName">
                               <div class="alert hidden"><small>Add first names</small></div>
                             </div>
                           </div>
                           <div class="col">
                             <div class="form-group">
                               <label class="txt_bold">Last name</label>
-                              <input class="form-control lastName" id="lastName" type="text" placeholder="Last name" name="lastName">
-                              <div class="alert hidden">
-                                <p>Add last names</p>
-                              </div>
+                              <input class="form-control lastName" id="lastName" type="text" name="lastName">
+                              <div class="alert hidden"><small>Add last names</small></div>
                             </div>
                           </div>
                         </div>
@@ -210,10 +207,8 @@
                           <div class="col mb-5">
                             <div class="form-group">
                               <label class="txt_bold">Email</label>
-                              <input class="form-control email" id="email" type="text" placeholder="Email" name="email">
-                              <div class="alert hidden">
-                                <p>Add your email</p>
-                              </div>
+                              <input class="form-control email" id="email" type="text" name="email">
+                              <div class="alert hidden"><small>Add your email</small></div>
                             </div>
                           </div>
                         </div>
@@ -262,7 +257,7 @@
                           <div class="col mb-5">
                             <div class="form-group">
                               <label class="txt_bold cl--gray">Your Guest’s Name</label>
-                              <input class="form-control" id="myGuestName" type="text" placeholder="Your Guest’s Name" name="myGuestName" form="formulario">
+                              <input class="form-control" id="myGuestName" type="text" name="myGuestName" form="formulario">
                               <div class="error"></div>
                             </div>
                           </div>
@@ -299,7 +294,25 @@
                       </div>
                       <div class="row">
                         <div class="col mb-5">
-                          <button class="btn btn_submit w-auto" type="submit">DONE</button>
+                          <button class="btn btn_submit w-auto closeSection">DONE</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item content_item" id="section7">
+                  <div class="bdb--gains bdb--x2 w-100 pd_top--x100 mg_bottom--x100">
+                    <div class="w-75 mx-auto">
+                      <div class="title title_celebrate txt_center txt_three cl--lightgray txt_size--em7"><span class="txt_thanks">Thank you <br> for your response!</span></div>
+                      <div class="txt_center d-block mb-5">
+                        <hr class="hr_site">
+                      </div>
+                      <div class="paragraf txt_center my-5">
+                        <div class="txt_size--em3">We hope you can join us <br> in future gatherings</div>
+                      </div>
+                      <div class="row">
+                        <div class="col mb-5">
+                          <button class="btn btn_submit w-auto closeSection">EXIT</button>
                         </div>
                       </div>
                     </div>

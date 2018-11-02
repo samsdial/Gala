@@ -5,8 +5,8 @@ block content
         .fixed_navbar
             .submenu(style="z-index:10000;")
                 #dropdownMenu.dropdown-menu(aria-labelledby='dropdownMenuLink')
-                    a.dropdown-item(href='#') RSPV NOW
-                    a.dropdown-item(href='#') GALA DETAILS
+                    a.dropdown-item.js-rvsOpen(href='#') RSPV NOW
+                    a.dropdown-item.js-details(href='#') GALA DETAILS
                     //a.dropdown-item(href='#') Something else here
             a#dropdownMenuLink.btn_menu.cl--green.txt_upper
                 span.icon_menu--svg
@@ -36,8 +36,8 @@ block content
                 .right-side
                     .full_container.bgc--white
                         .w-100.box_content.pd_bottom--x50
-                            #section1.item.content_item.txt_center
-                                .icon.icon_celebrate.mg_top--
+                            #section1.item.content_item.txt_center.pt-5
+                                .icon.icon_celebrate
                                 .title.txt_upper.mg_bottom--x50
                                     .txt_upper.cl--black.txt_size--em2 UNDER THE STARS!
                                 .intro.mg_bottom--x50
@@ -46,17 +46,17 @@ block content
                                     .paragraf
                                         h2.cl--black.txt_size--em3 We are so excited to <br> celebrate with you!
                                 .acction.mg_bottom--x25
-                                    button.btn.btn_site#btnCollapseOne(type="button") View Details
+                                    button.btn.btn_site.js-details(type="button") View Details
                                 .txt_center.d-block.mb-5
                                     hr.hr_site
                                 .w-100.mx-auto.mb-5
                                     .paragraf.txt_upper
                                         .h4.cl--black Kindly respond by November 15, 2018
                                 .acction.mg_bottom--x50
-                                    button.btn.btn_site--black#rvsopen(type="button") RVSP HERE
+                                    button.btn.btn_site--black.js-rvsOpen(type="button") RVSP HERE
                             #section2.item.content_item.txt_center
                                 .txt_right
-                                    button.btn#closeSection2
+                                    button.btn.closeSection
                                         span.icon.icon_close.close-button
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-50.mx-auto
@@ -69,10 +69,10 @@ block content
                                             | 401 Biscayne Blvd. Miami, Florida 33132
                                         ul.list--inline.list_link--green.mb-5
                                             li
-                                                a.btn_link(href="#") Get Directions
+                                                a.btn_link(href="https://www.google.com/maps/place/401+Biscayne+Blvd,+Miami,+FL+33132,+USA/@25.777468,-80.1853355,17z/data=!4m5!3m4!1s0x88d9b420599c42b5:0x4766c9b911455a89!8m2!3d25.7780573!4d-80.187095?hl=en", target="_blank") Get Directions
                                             li |
                                             li
-                                                a.btn_link(href="#") Where to Park
+                                                a.btn_link(href="bayside_marketplace-bayfront_dock_map.pdf" download="whereToPark" target="_blank") Where to Park
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-50.mx-auto
                                         .title.txt_upper.mb-3
@@ -105,11 +105,8 @@ block content
                                             span.txt_bold.txt_upper Livia Calzadilla
                             #section3.item.txt_center.content_item
                                 .txt_right
-                                    button.overlay_close.btn_menu
-                                        span.icon_menu--svg.cl--black.close-button
-                                            svg#icon-close(viewbox='0 0 24 24' width='55%' height='55%')
-                                                title close
-                                                path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
+                                  button.btn.closeSection
+                                    span.icon.icon_close.close-button
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-50.mx-auto
                                         .title.txt_upper.mb-3
@@ -133,6 +130,9 @@ block content
                                         .info.mb-2.cl--gray.mb-5
                                             | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                             #section4.item.content_item
+                                .txt_right
+                                  button.btn.closeSection
+                                    span.icon.icon_close.close-button
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-75.mx-auto
                                         .title.txt_upper.mb-5.txt_center
@@ -143,24 +143,24 @@ block content
                                                     .form-group
                                                         label.txt_bold
                                                             | First name
-                                                        input.form-control.firstName#firstName(type="text", placeholder="First name", name="firstName")
+                                                        input.form-control.firstName#firstName(type="text", name="firstName")
                                                         .alert.hidden
                                                             small Add first names
                                                 .col
                                                     .form-group
                                                         label.txt_bold
                                                             | Last name
-                                                        input.form-control.lastName#lastName(type="text", placeholder="Last name", name="lastName")
+                                                        input.form-control.lastName#lastName(type="text", name="lastName")
                                                         .alert.hidden
-                                                            p Add last names
+                                                            small Add last names
                                             .row
                                                 .col.mb-5
                                                     .form-group
                                                         label.txt_bold
                                                             | Email
-                                                        input.form-control.email#email(type="text", placeholder="Email", name="email")
+                                                        input.form-control.email#email(type="text", name="email")
                                                         .alert.hidden
-                                                            p Add your email
+                                                            small Add your email
                                             .row
                                                 .col.mb-5
                                                     button.btn.btn_submit#findMyInvitation Find my Invitation
@@ -200,7 +200,7 @@ block content
                                                     .form-group
                                                         label.txt_bold.cl--gray
                                                             | Your Guest’s Name
-                                                        input.form-control#myGuestName(type="text", placeholder="Your Guest’s Name", name="myGuestName" form="formulario")
+                                                        input.form-control#myGuestName(type="text", name="myGuestName" form="formulario")
                                                         .error
                                         #minisection3.data
                                             .row
@@ -225,6 +225,18 @@ block content
                                             .txt_size--em3  We look foward to <br>  Celebrating with you!
                                         .row
                                             .col.mb-5
-                                                button.btn.btn_submit.w-auto(type="submit") DONE
+                                                button.btn.btn_submit.w-auto.closeSection DONE
+                            #section7.item.content_item
+                              .bdb--gains.bdb--x2.w-100.pd_top--x100.mg_bottom--x100
+                                .w-75.mx-auto
+                                  .title.title_celebrate.txt_center.txt_three.cl--lightgray.txt_size--em7
+                                    span.txt_thanks Thank you <br> for your response!
+                                  .txt_center.d-block.mb-5
+                                    hr.hr_site
+                                  .paragraf.txt_center.my-5
+                                    .txt_size--em3 We hope you can join us <br> in future gatherings
+                                  .row
+                                    .col.mb-5
+                                      button.btn.btn_submit.w-auto.closeSection EXIT
                     .footer.bgc--gains.fixed--bottom.txt_center
                         .deco_elipce
