@@ -183,18 +183,18 @@ block content
                                                     input#notAttending.form-check-input(type='radio' name='attending' value='option2')
                                                     label.form-check-label(for='notAttending')
                                                         | Regretfully, unable to attend
-                                        #minisection2.row
-                                            .col.mb-5.resevation_form
-                                                .txt_bold.cl--gray.mb-3 Will you be bringing a guest?
-                                                .form-check
-                                                    input#yesMyGuest.form-check-input(type='radio' name='myGuest' value='option1')
-                                                    label.form-check-label(for='yesMyGuest')
-                                                        | Only me
-                                                .form-check
-                                                    input#notMyGuest.form-check-input(type='radio' name='myGuest' value='option2')
-                                                    label.form-check-label(for='notMyGuest')
-                                                        | Yes, I’m bringing a guest
-                                        #minisection3
+                                        #minisection2
+                                            .row
+                                              .col.mb-5.resevation_form
+                                                  .txt_bold.cl--gray.mb-3 Will you be bringing a guest?
+                                                  .form-check
+                                                      input#yesMyGuest.form-check-input(type='radio' name='myGuest' value='option1')
+                                                      label.form-check-label(for='yesMyGuest')
+                                                          | Only me
+                                                  .form-check
+                                                      input#notMyGuest.form-check-input(type='radio' name='myGuest' value='option2')
+                                                      label.form-check-label(for='notMyGuest')
+                                                          | Yes, I’m bringing a guest
                                             .row
                                                 .col.mb-5
                                                     .form-group
@@ -202,6 +202,7 @@ block content
                                                             | Your Guest’s Name
                                                         input.form-control#myGuestName(type="text", placeholder="Your Guest’s Name", name="myGuestName")
                                                         .error
+                                        #minisection3.data
                                             .row
                                                 .col.mb-5
                                                     .form-group
