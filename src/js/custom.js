@@ -168,7 +168,8 @@ $(document).ready(function($){
             url: 'phpsave.php',
             data: $('form').serialize(),
             success: function (e) {
-                console.log(e);
+                currentPage = 6;
+                changeCurrentPage();
             }
         });
     });
@@ -181,7 +182,7 @@ $(document).ready(function($){
        let value = $(this).val();
 
        if (value === 'option1') {
-           $minisection2.show();
+           $minisection3.show();
        } else {
            currentPage = 7;
            changeCurrentPage();
