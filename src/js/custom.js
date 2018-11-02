@@ -65,6 +65,7 @@ $(document).ready(function($){
     var $section8 = $('#section8');
     var $section9 = $('#section9');
     var $section10 = $('#section10');
+    let $sectionEco = $('#sectionECO');
 
     changeCurrentPage();
     function changeCurrentPage()
@@ -80,6 +81,7 @@ $(document).ready(function($){
         $section8.hide();
         $section9.hide();
         $section10.hide();
+        $sectionEco.hide();
         switch (currentPage) {
             case 1:
                 $section1.show();
@@ -114,54 +116,59 @@ $(document).ready(function($){
         }
     }
 
-    let $firstName = $('#firstName').val();
-    let $lastName = $('#lastName').val();
-    let $email = $('#email').val();
+    let $firstName = $('#firstName');
+    let $lastName = $('#lastName');
+    let $email = $('#email');
     let $validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-    let $yesAttending = $('#yesAttending');
-    let $notAttending = $('#notAttending');
-    let $yesMyGuest = $('#yesMyGuest');
-    let $notMyGuest = $('#notMyGuest');
 
+    let $attendingCheckbox = $('input[name="attending"]');
+    let $guestCheckbox = $('input[name="myGuest"]');
     let $findMyInvitation = $('#findMyInvitation');
     let $guestName = $('#guestName');
-    $findMyInvitation.on('click', function(e) {
-        e.preventDefault();
-      if($firstName == "" || $lastName == "" || phone == "" || city == "" || message == "" ){
-        if($firstName == ""){
-            $('.firstName + .alert').removeClass('hidden');
-            $('#firstName').focus();
-            return false;
-        } else {
-            $('.firstName + .alert').addClass('hidden');
-        }
-        if($lastName == ""){
-              $('.lastName + .alert').removeClass('hidden');
-              $('#lastName').focus();
-              return false;
-        } else {
-              $('.lastName + .alert').addClass('hidden');
-        }
-        if($email == "" || !$validacion_email($email)){
-            $('.email + .alert').removeClass('hidden');
-            $('#email').focus();
-            return false;
-        } else {
-            $('.email + .alert').addClass('hidden');
-        }
-      }
+    let $minisection2 = $('#minisection2');
+    let $minisection3 = $('#minisection3');
+
+    $minisection2.hide();
+    $minisection3.hide();
+
+    $attendingCheckbox.on('change', function (e) {
+       let value = $(this).val();
+
+       if (value === 'option1') {
+           $minisection2.show();
+       } else {
+           currentPage = 6;
+           changeCurrentPage();
+           $('#finallRespond').html('Thank you.');
+       }
     });
 
-    /*$findMyInvitation.on('click', function(e) {
-        e.preventDefault();
-        if (validateData()) {
-            $guestName.html(`${$firstName.val()} ${$lastName.val()} `)
+    $guestCheckbox.on('change', function(e) {
+        let value = $(this).val();
+        console.log(value);
+        if (value === 'option2') {
+            $minisection3.show();
         } else {
-            alert('falta');
+
+        }
+    })
+
+    $findMyInvitation.on('click', function(e) {
+        e.preventDefault();
+        console.log($validacion_email.test($email.val()));
+        if ($firstName.val() === "") {
+            $('.firstName + .alert').removeClass('hidden');
+            $firstName.focus();
+        } else if ($lastName.val() === "") {
+            $('.lastName + .alert').removeClass('hidden');
+            $lastName.focus();
+        } else if ($email.val() === "" && !$validacion_email.test($email.val())) {
+            $('.email + .alert').removeClass('hidden');
+            $email.focus();
+        } else {
+            $guestName.html(`${$firstName.val()} ${$lastName.val()} `);
+            $sectionEco.show();
         }
     });
-    function validateData(){
-        if ($firstName.val() == "" || $lastName.val() == "" || $email.val() == "") return false;
-        return true;
-    }*/
+
 });
