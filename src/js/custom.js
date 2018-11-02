@@ -111,6 +111,24 @@ $(document).ready(function($){
                 $section10.show();
                 break;
         }
-        currentPage++;
+    }
+
+    let $firstName = $('input[name="firstName"]');
+    let $lastName = $('input[name="lastName"]');
+    let $email = $('input[name="email"]');
+    let $findMyInvitation = $('#findMyInvitation');
+    let $guestName = $('#guestName');
+
+    $findMyInvitation.on('click', function(e) {
+        e.preventDefault();
+        if (validateData()) {
+            $guestName.html(`${$firstName.val()} ${$lastName.val()} `)
+        } else {
+            alert('falta');
+        }
+    });
+    function validateData(){
+        if ($firstName.val() == "" || $lastName.val() == "" || $email.val() == "") return false;
+        return true;
     }
 });

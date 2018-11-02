@@ -106,7 +106,6 @@ block content
                                         .info.mb-2.cl--gray.mb-5.txt_center
                                             | For more information please contact<br>
                                             span.txt_bold.txt_upper Livia Calzadilla
-
                             #section3.item.txt_center.content_item
                                 .txt_right
                                     button.overlay_close.btn_menu
@@ -147,28 +146,28 @@ block content
                                                     .form-group
                                                         label.txt_bold
                                                             | First name
-                                                        input.form-control(type="text", placeholder="First name")
+                                                        input.form-control(type="text", placeholder="First name", name="firstName")
                                                 .col
                                                     .form-group
                                                         label.txt_bold
                                                             | Last name
-                                                        input.form-control(type="text", placeholder="Last name")
+                                                        input.form-control(type="text", placeholder="Last name", name="lastName")
                                             .row
                                                 .col.mb-5
                                                     .form-group
                                                         label.txt_bold
                                                             | Email
-                                                        input.form-control(type="text", placeholder="Emial")
+                                                        input.form-control(type="text", placeholder="Email", name="email")
                                             .row
                                                 .col.mb-5
-                                                    button.btn.btn_submit(type="submit") Fin my Invitation
+                                                    button#findMyInvitation.btn.btn_submit(type="submit") Find my Invitation
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-75.mx-auto
                                         .title.txt_upper.mb-5.txt_center
                                             .txt_upper.txt_bold.cl--black.txt_size--em3 RVSP Form
                                         .info.data_rvsp.mb-5
                                             i.icon.icon_check
-                                            span.txt_bold.ml-3 Yajaira Cruz
+                                            span.txt_bold.ml-3#guestName Yajaira Cruz
                                             span.txt_bold and Guest
                                         .row
                                             .col.mb-5.resevation_form.mb-5
@@ -197,13 +196,13 @@ block content
                                                 .form-group
                                                     label.txt_bold.cl--gray
                                                         | Your Guest’s Name
-                                                    input.form-control(type="text", placeholder="Emial")
+                                                    input.form-control(type="text", placeholder="Email")
                                         .row
                                             .col.mb-5
                                                 .form-group
                                                     label.txt_bold.cl--gray
                                                         | What song will get you to join us on the dance floor?
-                                                    input.form-control(type="text", placeholder="Emial")
+                                                    input.form-control(type="text", placeholder="Email")
                                         .row
                                             .col.mb-5
                                                 button.btn.btn_submit(type="submit") submit rsvp
