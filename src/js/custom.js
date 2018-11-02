@@ -8,13 +8,14 @@ $(document).ready(function($){
     var btnOpen = $('#trigger-overlay');
     var btnClose = $('.overlay_close');
     var menu = $('.overlay_contentpush');
-
     function opening(e) {
         e.preventDefault();
         btnOpenDrop.toggleClass('opening');
         if (dropmenu.hasClass('show')){
             console.log('Agregar show');
             dropmenu.removeClass('show');
+        } else {
+            dropmenu.addClass('show');
         }
     }
 
@@ -113,13 +114,45 @@ $(document).ready(function($){
         }
     }
 
-    let $firstName = $('input[name="firstName"]');
-    let $lastName = $('input[name="lastName"]');
-    let $email = $('input[name="email"]');
+    let $firstName = $('#firstName').val();
+    let $lastName = $('#lastName').val();
+    let $email = $('#email').val();
+    let $validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+    let $yesAttending = $('#yesAttending');
+    let $notAttending = $('#notAttending');
+    let $yesMyGuest = $('#yesMyGuest');
+    let $notMyGuest = $('#notMyGuest');
+
     let $findMyInvitation = $('#findMyInvitation');
     let $guestName = $('#guestName');
-
     $findMyInvitation.on('click', function(e) {
+        e.preventDefault();
+      if($firstName == "" || $lastName == "" || phone == "" || city == "" || message == "" ){
+        if($firstName == ""){
+            $('.firstName + .alert').removeClass('hidden');
+            $('#firstName').focus();
+            return false;
+        } else {
+            $('.firstName + .alert').addClass('hidden');
+        }
+        if($lastName == ""){
+              $('.lastName + .alert').removeClass('hidden');
+              $('#lastName').focus();
+              return false;
+        } else {
+              $('.lastName + .alert').addClass('hidden');
+        }
+        if($email == "" || !$validacion_email($email)){
+            $('.email + .alert').removeClass('hidden');
+            $('#email').focus();
+            return false;
+        } else {
+            $('.email + .alert').addClass('hidden');
+        }
+      }
+    });
+
+    /*$findMyInvitation.on('click', function(e) {
         e.preventDefault();
         if (validateData()) {
             $guestName.html(`${$firstName.val()} ${$lastName.val()} `)
@@ -130,5 +163,5 @@ $(document).ready(function($){
     function validateData(){
         if ($firstName.val() == "" || $lastName.val() == "" || $email.val() == "") return false;
         return true;
-    }
+    }*/
 });

@@ -196,13 +196,17 @@
                           <div class="col">
                             <div class="form-group">
                               <label class="txt_bold">First name</label>
-                              <input class="form-control" type="text" placeholder="First name" name="firstName">
+                              <input class="form-control firstName" id="firstName" type="text" placeholder="First name" name="firstName">
+                              <div class="alert hidden"><small>Add first names</small></div>
                             </div>
                           </div>
                           <div class="col">
                             <div class="form-group">
                               <label class="txt_bold">Last name</label>
-                              <input class="form-control" type="text" placeholder="Last name" name="lastName">
+                              <input class="form-control lastName" id="lastName" type="text" placeholder="Last name" name="lastName">
+                              <div class="alert hidden">
+                                <p>Add last names</p>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -210,69 +214,76 @@
                           <div class="col mb-5">
                             <div class="form-group">
                               <label class="txt_bold">Email</label>
-                              <input class="form-control" type="text" placeholder="Email" name="email">
+                              <input class="form-control email" id="email" type="text" placeholder="Email" name="email">
+                              <div class="alert hidden">
+                                <p>Add your email</p>
+                              </div>
                             </div>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col mb-5">
-                            <button class="btn btn_submit" id="findMyInvitation" type="submit">Find my Invitation</button>
+                            <button class="btn btn_submit">Find my Invitation</button>
                           </div>
                         </div>
                       </form>
                     </div>
                   </div>
-                  <div class="bdb--gains bdb--x2 w-100 mb-5">
+                  <div class="bdb--gains bdb--x2 w-100 mb-5" id="sectionECO">
                     <div class="w-75 mx-auto">
                       <div class="title txt_upper mb-5 txt_center">
                         <div class="txt_upper txt_bold cl--black txt_size--em3">RVSP Form</div>
                       </div>
                       <div class="info data_rvsp mb-5"><i class="icon icon_check"></i><span class="txt_bold ml-3" id="guestName">Yajaira Cruz</span><span class="txt_bold">and Guest</span></div>
-                      <div class="row">
+                      <div class="row" id="minisection1">
                         <div class="col mb-5 resevation_form mb-5">
                           <div class="txt_bold cl--gray mb-3">Will you be attending our Gala?</div>
                           <div class="form-check">
-                            <input class="form-check-input" id="exampleRadios1" type="radio" name="exampleRadios" value="option1">
-                            <label class="form-check-label" for="exampleRadios1">Yes, can’t wait!</label>
+                            <input class="form-check-input" id="yesAttending" type="radio" name="attending" value="option1">
+                            <label class="form-check-label" for="yesAttending">Yes, can’t wait!</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" id="exampleRadios2" type="radio" name="exampleRadios" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">Regretfully, unable to attend</label>
+                            <input class="form-check-input" id="notAttending" type="radio" name="attending" value="option2">
+                            <label class="form-check-label" for="notAttending">Regretfully, unable to attend</label>
                           </div>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row" id="minisection2">
                         <div class="col mb-5 resevation_form">
                           <div class="txt_bold cl--gray mb-3">Will you be bringing a guest?</div>
                           <div class="form-check">
-                            <input class="form-check-input" id="exampleRadios3" type="radio" name="oderRadios" value="option1">
-                            <label class="form-check-label" for="exampleRadios3">Only me</label>
+                            <input class="form-check-input" id="yesMyGuest" type="radio" name="myGuest" value="option1">
+                            <label class="form-check-label" for="yesMyGuest">Only me</label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" id="exampleRadios4" type="radio" name="oderRadios" value="option2">
-                            <label class="form-check-label" for="exampleRadios4">Yes, I’m bringing a guest</label>
+                            <input class="form-check-input" id="notMyGuest" type="radio" name="myGuest" value="option2">
+                            <label class="form-check-label" for="notMyGuest">Yes, I’m bringing a guest</label>
                           </div>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col mb-5">
-                          <div class="form-group">
-                            <label class="txt_bold cl--gray">Your Guest’s Name</label>
-                            <input class="form-control" type="text" placeholder="Email">
+                      <div id="minisection3">
+                        <div class="row">
+                          <div class="col mb-5">
+                            <div class="form-group">
+                              <label class="txt_bold cl--gray">Your Guest’s Name</label>
+                              <input class="form-control" id="myGuestName" type="text" placeholder="Your Guest’s Name" name="myGuestName">
+                              <div class="error"></div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col mb-5">
-                          <div class="form-group">
-                            <label class="txt_bold cl--gray">What song will get you to join us on the dance floor?</label>
-                            <input class="form-control" type="text" placeholder="Email">
+                        <div class="row">
+                          <div class="col mb-5">
+                            <div class="form-group">
+                              <label class="txt_bold cl--gray">What song will get you to join us on the dance floor?</label>
+                              <input class="form-control" id="songDanceFloor" type="text" placeholder="" name="songDanceFloor">
+                              <div class="error"></div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col mb-5">
-                          <button class="btn btn_submit" type="submit">submit rsvp</button>
+                        <div class="row">
+                          <div class="col mb-5">
+                            <button class="btn btn_submit" id="findMyInvitation" type="submit">submit rsvp</button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -281,7 +292,7 @@
                 <div class="item content_item" id="section6">
                   <div class="bdb--gains bdb--x2 w-100 mg_top--x100 mg_bottom--x100">
                     <div class="w-75 mx-auto">
-                      <div class="title title_celebrate txt_center txt_three cl--lightgray txt_size--em7"><span class="txt_thanks">Thank You</span></div>
+                      <div class="title title_celebrate txt_center txt_three cl--lightgray txt_size--em7"><span class="txt_thanks">Thank You.</span></div>
                       <div class="txt_center d-block mb-5">
                         <hr class="hr_site">
                       </div>

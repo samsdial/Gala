@@ -146,22 +146,28 @@ block content
                                                     .form-group
                                                         label.txt_bold
                                                             | First name
-                                                        input.form-control(type="text", placeholder="First name", name="firstName")
+                                                        input.form-control.firstName#firstName(type="text", placeholder="First name", name="firstName")
+                                                        .alert.hidden
+                                                            small Add first names
                                                 .col
                                                     .form-group
                                                         label.txt_bold
                                                             | Last name
-                                                        input.form-control(type="text", placeholder="Last name", name="lastName")
+                                                        input.form-control.lastName#lastName(type="text", placeholder="Last name", name="lastName")
+                                                        .alert.hidden
+                                                            p Add last names
                                             .row
                                                 .col.mb-5
                                                     .form-group
                                                         label.txt_bold
                                                             | Email
-                                                        input.form-control(type="text", placeholder="Email", name="email")
+                                                        input.form-control.email#email(type="text", placeholder="Email", name="email")
+                                                        .alert.hidden
+                                                            p Add your email
                                             .row
                                                 .col.mb-5
-                                                    button#findMyInvitation.btn.btn_submit(type="submit") Find my Invitation
-                                .bdb--gains.bdb--x2.w-100.mb-5
+                                                    button.btn.btn_submit Find my Invitation
+                                #sectionECO.bdb--gains.bdb--x2.w-100.mb-5
                                     .w-75.mx-auto
                                         .title.txt_upper.mb-5.txt_center
                                             .txt_upper.txt_bold.cl--black.txt_size--em3 RVSP Form
@@ -169,48 +175,52 @@ block content
                                             i.icon.icon_check
                                             span.txt_bold.ml-3#guestName Yajaira Cruz
                                             span.txt_bold and Guest
-                                        .row
+                                        #minisection1.row
                                             .col.mb-5.resevation_form.mb-5
                                                 .txt_bold.cl--gray.mb-3 Will you be attending our Gala?
                                                 .form-check
-                                                    input#exampleRadios1.form-check-input(type='radio' name='exampleRadios' value='option1')
-                                                    label.form-check-label(for='exampleRadios1')
+                                                    input#yesAttending.form-check-input(type='radio' name='attending' value='option1')
+                                                    label.form-check-label(for='yesAttending')
                                                         | Yes, can’t wait!
                                                 .form-check
-                                                    input#exampleRadios2.form-check-input(type='radio' name='exampleRadios' value='option2')
-                                                    label.form-check-label(for='exampleRadios2')
+                                                    input#notAttending.form-check-input(type='radio' name='attending' value='option2')
+                                                    label.form-check-label(for='notAttending')
                                                         | Regretfully, unable to attend
-                                        .row
+                                        #minisection2.row
                                             .col.mb-5.resevation_form
                                                 .txt_bold.cl--gray.mb-3 Will you be bringing a guest?
                                                 .form-check
-                                                    input#exampleRadios3.form-check-input(type='radio' name='oderRadios' value='option1')
-                                                    label.form-check-label(for='exampleRadios3')
+                                                    input#yesMyGuest.form-check-input(type='radio' name='myGuest' value='option1')
+                                                    label.form-check-label(for='yesMyGuest')
                                                         | Only me
                                                 .form-check
-                                                    input#exampleRadios4.form-check-input(type='radio' name='oderRadios' value='option2')
-                                                    label.form-check-label(for='exampleRadios4')
+                                                    input#notMyGuest.form-check-input(type='radio' name='myGuest' value='option2')
+                                                    label.form-check-label(for='notMyGuest')
                                                         | Yes, I’m bringing a guest
-                                        .row
-                                            .col.mb-5
-                                                .form-group
-                                                    label.txt_bold.cl--gray
-                                                        | Your Guest’s Name
-                                                    input.form-control(type="text", placeholder="Email")
-                                        .row
-                                            .col.mb-5
-                                                .form-group
-                                                    label.txt_bold.cl--gray
-                                                        | What song will get you to join us on the dance floor?
-                                                    input.form-control(type="text", placeholder="Email")
-                                        .row
-                                            .col.mb-5
-                                                button.btn.btn_submit(type="submit") submit rsvp
+                                        #minisection3
+                                            .row
+                                                .col.mb-5
+                                                    .form-group
+                                                        label.txt_bold.cl--gray
+                                                            | Your Guest’s Name
+                                                        input.form-control#myGuestName(type="text", placeholder="Your Guest’s Name", name="myGuestName")
+                                                        .error
+                                            .row
+                                                .col.mb-5
+                                                    .form-group
+                                                        label.txt_bold.cl--gray
+                                                            | What song will get you to join us on the dance floor?
+                                                        input.form-control#songDanceFloor(type="text", placeholder="", name="songDanceFloor")
+                                                        .error
+                                            .row
+                                                .col.mb-5
+                                                    button.btn.btn_submit#findMyInvitation(type="submit") submit rsvp
+
                             #section6.item.content_item
                                 .bdb--gains.bdb--x2.w-100.mg_top--x100.mg_bottom--x100
                                     .w-75.mx-auto
                                         .title.title_celebrate.txt_center.txt_three.cl--lightgray.txt_size--em7
-                                            span.txt_thanks Thank You
+                                            span.txt_thanks Thank You.
                                         .txt_center.d-block.mb-5
                                             hr.hr_site
                                         .paragraf.txt_center.my-5
