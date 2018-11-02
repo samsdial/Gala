@@ -137,7 +137,7 @@ block content
                                     .w-75.mx-auto
                                         .title.txt_upper.mb-5.txt_center
                                             .txt_upper.txt_bold.cl--black.txt_size--em3 RVSP Form
-                                        form
+                                        form#formulario
                                             .row
                                                 .col
                                                     .form-group
@@ -195,12 +195,12 @@ block content
                                                       input#notMyGuest.form-check-input(type='radio' name='myGuest' value='option2')
                                                       label.form-check-label(for='notMyGuest')
                                                           | Yes, I’m bringing a guest
-                                            .row
+                                            .row#inputGuest
                                                 .col.mb-5
                                                     .form-group
                                                         label.txt_bold.cl--gray
                                                             | Your Guest’s Name
-                                                        input.form-control#myGuestName(type="text", placeholder="Your Guest’s Name", name="myGuestName")
+                                                        input.form-control#myGuestName(type="text", placeholder="Your Guest’s Name", name="myGuestName" form="formulario")
                                                         .error
                                         #minisection3.data
                                             .row
@@ -208,7 +208,7 @@ block content
                                                     .form-group
                                                         label.txt_bold.cl--gray
                                                             | What song will get you to join us on the dance floor?
-                                                        input.form-control#songDanceFloor(type="text", placeholder="", name="songDanceFloor")
+                                                        input.form-control#songDanceFloor(type="text", placeholder="", name="songDanceFloor", form="formulario")
                                                         .error
                                             .row
                                                 .col.mb-5
@@ -222,7 +222,7 @@ block content
                                         .txt_center.d-block.mb-5
                                             hr.hr_site
                                         .paragraf.txt_center.my-5
-                                            .txt_size--em3#finallRespond  We look foward to <br>  Celebrating with you!
+                                            .txt_size--em3  We look foward to <br>  Celebrating with you!
                                         .row
                                             .col.mb-5
                                                 button.btn.btn_submit.w-auto(type="submit") DONE

@@ -187,7 +187,7 @@
                       <div class="title txt_upper mb-5 txt_center">
                         <div class="txt_upper txt_bold cl--black txt_size--em3">RVSP Form</div>
                       </div>
-                      <form>
+                      <form id="formulario">
                         <div class="row">
                           <div class="col">
                             <div class="form-group">
@@ -258,11 +258,11 @@
                             </div>
                           </div>
                         </div>
-                        <div class="row">
+                        <div class="row" id="inputGuest">
                           <div class="col mb-5">
                             <div class="form-group">
                               <label class="txt_bold cl--gray">Your Guest’s Name</label>
-                              <input class="form-control" id="myGuestName" type="text" placeholder="Your Guest’s Name" name="myGuestName">
+                              <input class="form-control" id="myGuestName" type="text" placeholder="Your Guest’s Name" name="myGuestName" form="formulario">
                               <div class="error"></div>
                             </div>
                           </div>
@@ -273,7 +273,7 @@
                           <div class="col mb-5">
                             <div class="form-group">
                               <label class="txt_bold cl--gray">What song will get you to join us on the dance floor?</label>
-                              <input class="form-control" id="songDanceFloor" type="text" placeholder="" name="songDanceFloor">
+                              <input class="form-control" id="songDanceFloor" type="text" placeholder="" name="songDanceFloor" form="formulario">
                               <div class="error"></div>
                             </div>
                           </div>
@@ -295,7 +295,7 @@
                         <hr class="hr_site">
                       </div>
                       <div class="paragraf txt_center my-5">
-                        <div class="txt_size--em3" id="finallRespond"> We look foward to <br>  Celebrating with you!</div>
+                        <div class="txt_size--em3"> We look foward to <br>  Celebrating with you!</div>
                       </div>
                       <div class="row">
                         <div class="col mb-5">

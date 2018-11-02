@@ -124,12 +124,45 @@ $(document).ready(function($){
     let $attendingCheckbox = $('input[name="attending"]');
     let $guestCheckbox = $('input[name="myGuest"]');
     let $findMyInvitation = $('#findMyInvitation');
+    let $finallRespond = $('#SendEnd');
     let $guestName = $('#guestName');
     let $minisection2 = $('#minisection2');
     let $minisection3 = $('#minisection3');
+    let $inputGuestRow = $('#inputGuest');
+
+    $findMyInvitation.on('click', function(e) {
+        e.preventDefault();
+        if ($firstName.val() === "") {
+            $('.firstName + .alert').removeClass('hidden');
+            $firstName.focus();
+        } else if ($lastName.val() === "") {
+            $('.lastName + .alert').removeClass('hidden');
+            $lastName.focus();
+        } else if ($email.val() === "" && !$validacion_email.test($email.val())) {
+            $('.email + .alert').removeClass('hidden');
+            $email.focus();
+        } else {
+            $guestName.html(`${$firstName.val()} ${$lastName.val()} `);
+            $sectionEco.show();
+        }
+    });
+
+    $finallRespond.on('click', function (e) {
+        e.preventDefault();
+        console.log($('form').serialize());
+        $.ajax({
+            type: 'POST',
+            url: 'phpsave.php',
+            data: $('form').serialize(),
+            success: function (e) {
+                console.log(e);
+            }
+        });
+    });
 
     $minisection2.hide();
     $minisection3.hide();
+    $inputGuestRow.hide();
 
     $attendingCheckbox.on('change', function (e) {
        let value = $(this).val();
@@ -145,30 +178,25 @@ $(document).ready(function($){
 
     $guestCheckbox.on('change', function(e) {
         let value = $(this).val();
-        console.log(value);
         if (value === 'option2') {
+            $inputGuestRow.show();
+            if ($inputGuestRow.find('input').val() === "") {
+                $minisection3.hide();
+            }
+        } else {
+            $inputGuestRow.hide();
+            $inputGuestRow.find('input').val("");
             $minisection3.show();
-        } else {
-
-        }
-    })
-
-    $findMyInvitation.on('click', function(e) {
-        e.preventDefault();
-        console.log($validacion_email.test($email.val()));
-        if ($firstName.val() === "") {
-            $('.firstName + .alert').removeClass('hidden');
-            $firstName.focus();
-        } else if ($lastName.val() === "") {
-            $('.lastName + .alert').removeClass('hidden');
-            $lastName.focus();
-        } else if ($email.val() === "" && !$validacion_email.test($email.val())) {
-            $('.email + .alert').removeClass('hidden');
-            $email.focus();
-        } else {
-            $guestName.html(`${$firstName.val()} ${$lastName.val()} `);
-            $sectionEco.show();
         }
     });
+
+    $inputGuestRow.on('change keypress', 'input', function (e) {
+        let val = $(this).val();
+        if (val.length   > 5) {
+            $minisection3.show();
+        }
+    });
+
+
 
 });
