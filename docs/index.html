@@ -36,16 +36,6 @@
   </head>
   <body style="position: relative;">
     <div id="theGrid">
-      <!--.overlay.overlay_contentpush
-      button.overlay_close.btn_menu
-          span.icon_menu--svg.cl--white.close-button
-              svg#icon-close(viewbox='0 0 24 24' width='100%' height='100%')
-                  title close
-                  path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
-      
-          span.cl--white Cerrar
-      
-      -->
       <div class="fixed_navbar">
         <div class="submenu" style="z-index:10000;">
           <div class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item" href="#">RSPV NOW</a><a class="dropdown-item" href="#">GALA DETAILS</a>
@@ -79,15 +69,8 @@
           </div>
           <div class="right-side">
             <div class="full_container bgc--white">
-              <div class="txt_right">
-                <button class="overlay_close btn_menu"><span class="icon_menu--svg cl--black close-button">
-                    <svg id="icon-close" viewbox="0 0 24 24" width="55%" height="55%">
-                      <title>close</title>
-                      <path d="M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z"></path>
-                    </svg></span></button>
-              </div>
               <div class="w-100 box_content pd_bottom--x50 pd_top--x50">
-                <div class="item content_item txt_center hidden">
+                <div class="item content_item txt_center" id="section1">
                   <div class="icon icon_celebrate"></div>
                   <div class="title txt_upper mg_bottom--x50">
                     <div class="txt_upper cl--black txt_size--em2">UNDER THE STARS!</div>
@@ -112,10 +95,17 @@
                     </div>
                   </div>
                   <div class="acction mg_bottom--x50">
-                    <button class="btn btn_site--black" id="btnCollapseTwo" type="button">RVSP HERE</button>
+                    <button class="btn btn_site--black" id="rvsopen" type="button">RVSP HERE</button>
                   </div>
                 </div>
-                <div class="item content_item txt_center">
+                <div class="item content_item txt_center" id="section2">
+                  <div class="txt_right">
+                    <button class="overlay_close btn_menu"><span class="icon_menu--svg cl--black close-button">
+                        <svg id="icon-close" viewbox="0 0 24 24" width="55%" height="55%">
+                          <title>close</title>
+                          <path d="M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z"></path>
+                        </svg></span></button>
+                  </div>
                   <div class="bdb--gains bdb--x2 w-100 mb-5">
                     <div class="w-50 mx-auto">
                       <div class="title txt_upper mb-3">
@@ -163,7 +153,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="item txt_center content_item hidden">
+                <div class="item txt_center content_item" id="section3">
+                  <div class="txt_right">
+                    <button class="overlay_close btn_menu"><span class="icon_menu--svg cl--black close-button">
+                        <svg id="icon-close" viewbox="0 0 24 24" width="55%" height="55%">
+                          <title>close</title>
+                          <path d="M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z"></path>
+                        </svg></span></button>
+                  </div>
                   <div class="bdb--gains bdb--x2 w-100 mb-5">
                     <div class="w-50 mx-auto">
                       <div class="title txt_upper mb-3">
@@ -188,7 +185,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="item content_item">
+                <div class="item content_item" id="section4">
                   <div class="bdb--gains bdb--x2 w-100 mb-5">
                     <div class="w-75 mx-auto">
                       <div class="title txt_upper mb-5 txt_center">
@@ -281,7 +278,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="item content_item">
+                <div class="item content_item" id="section6">
                   <div class="bdb--gains bdb--x2 w-100 mg_top--x100 mg_bottom--x100">
                     <div class="w-75 mx-auto">
                       <div class="title title_celebrate txt_center txt_three cl--lightgray txt_size--em7"><span class="txt_thanks">Thank You</span></div>

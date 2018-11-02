@@ -2,15 +2,6 @@ extends ./base/layout.pug
 
 block content
     #theGrid
-        //.overlay.overlay_contentpush
-            button.overlay_close.btn_menu
-                span.icon_menu--svg.cl--white.close-button
-                    svg#icon-close(viewbox='0 0 24 24' width='100%' height='100%')
-                        title close
-                        path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
-
-                span.cl--white Cerrar
-
         .fixed_navbar
             .submenu(style="z-index:10000;")
                 #dropdownMenu.dropdown-menu(aria-labelledby='dropdownMenuLink')
@@ -44,14 +35,8 @@ block content
                             span.cl--green CELEBRATING OUR FUTURE
                 .right-side
                     .full_container.bgc--white
-                        .txt_right
-                            button.overlay_close.btn_menu
-                                span.icon_menu--svg.cl--black.close-button
-                                    svg#icon-close(viewbox='0 0 24 24' width='55%' height='55%')
-                                        title close
-                                        path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
                         .w-100.box_content.pd_bottom--x50.pd_top--x50
-                            .item.content_item.txt_center.hidden
+                            #section1.item.content_item.txt_center
                                 .icon.icon_celebrate
                                 .title.txt_upper.mg_bottom--x50
                                     .txt_upper.cl--black.txt_size--em2 UNDER THE STARS!
@@ -68,8 +53,14 @@ block content
                                     .paragraf.txt_upper
                                         .h4.cl--black Kindly respond by November 15, 2018
                                 .acction.mg_bottom--x50
-                                    button.btn.btn_site--black#btnCollapseTwo(type="button") RVSP HERE
-                            .item.content_item.txt_center
+                                    button.btn.btn_site--black#rvsopen(type="button") RVSP HERE
+                            #section2.item.content_item.txt_center
+                                .txt_right
+                                    button.overlay_close.btn_menu
+                                        span.icon_menu--svg.cl--black.close-button
+                                            svg#icon-close(viewbox='0 0 24 24' width='55%' height='55%')
+                                                title close
+                                                path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-50.mx-auto
                                         .title.txt_upper.mb-3
@@ -116,7 +107,13 @@ block content
                                             | For more information please contact<br>
                                             span.txt_bold.txt_upper Livia Calzadilla
 
-                            .item.txt_center.content_item.hidden
+                            #section3.item.txt_center.content_item
+                                .txt_right
+                                    button.overlay_close.btn_menu
+                                        span.icon_menu--svg.cl--black.close-button
+                                            svg#icon-close(viewbox='0 0 24 24' width='55%' height='55%')
+                                                title close
+                                                path(d='M21 4.565L19.435 3 12 10.435 4.565 3 3 4.565 10.435 12 3 19.435 4.565 21 12 13.565 19.435 21 21 19.435 13.565 12z')
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-50.mx-auto
                                         .title.txt_upper.mb-3
@@ -139,7 +136,7 @@ block content
                                             | From
                                         .info.mb-2.cl--gray.mb-5
                                             | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            .item.content_item
+                            #section4.item.content_item
                                 .bdb--gains.bdb--x2.w-100.mb-5
                                     .w-75.mx-auto
                                         .title.txt_upper.mb-5.txt_center
@@ -210,7 +207,7 @@ block content
                                         .row
                                             .col.mb-5
                                                 button.btn.btn_submit(type="submit") submit rsvp
-                            .item.content_item
+                            #section6.item.content_item
                                 .bdb--gains.bdb--x2.w-100.mg_top--x100.mg_bottom--x100
                                     .w-75.mx-auto
                                         .title.title_celebrate.txt_center.txt_three.cl--lightgray.txt_size--em7
