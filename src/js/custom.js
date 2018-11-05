@@ -1,9 +1,31 @@
 $(document).ready(function($){
-    $('a.js-rvsOpen').click(function(){
-        $('html, body').animate({
-            scrollTop: $( $(this).attr('href') ).offset().top
-        }, 500);
-        return false;
+    var btnScrollOpen = $('a.js-rvsOpen');
+    var btnScrollOpen2 = $('a.js-details');
+    btnScrollOpen.click(function(){
+        btnScrollOpen.addClass('opens');
+        if (btnScrollOpen.hasClass('opens')){
+            $('html, body').animate({
+                scrollTop: $( $(this).attr('href') ).offset().top
+            }, 500);
+            btnScrollOpen.removeClass('opens');
+            return false;
+
+        } else {
+            btnScrollOpen.removeClass('opens');
+        }
+    });
+    btnScrollOpen2.click(function(){
+        btnScrollOpen.addClass('opens');
+        if (btnScrollOpen.hasClass('opens')){
+            $('html, body').animate({
+                scrollTop: $( $(this).attr('href') ).offset().top
+            }, 500);
+            btnScrollOpen.removeClass('opens');
+            return false;
+
+        } else {
+            btnScrollOpen.removeClass('opens');
+        }
     });
 
     var currentPage = 1;
@@ -19,7 +41,7 @@ $(document).ready(function($){
         e.preventDefault();
         btnOpenDrop.toggleClass('opening');
         if (dropmenu.hasClass('show')){
-            console.log('Agregar show');
+            //console.log('Agregar show');
             dropmenu.removeClass('show');
         } else {
             dropmenu.addClass('show');
