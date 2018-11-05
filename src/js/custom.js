@@ -1,4 +1,11 @@
 $(document).ready(function($){
+    $('a.js-rvsOpen').click(function(){
+        $('html, body').animate({
+            scrollTop: $( $(this).attr('href') ).offset().top
+        }, 500);
+        return false;
+    });
+
     var currentPage = 1;
     //menu OPen
     var btnOpenDrop = $('#dropdownMenuLink');
@@ -69,6 +76,13 @@ $(document).ready(function($){
         currentPage = 1;
         changeCurrentPage();
     });
+    //Close Section{}  #closeSection4
+    var closeReloat = $('.closReloat');
+    closeReloat.on('click', function (a){
+        //console.log('Hola Tres');
+        currentPage = 1;
+        changeCurrentPage();
+    });
     var $section1 = $('#section1');
     var $section2 = $('#section2');
     var $section3 = $('#section3');
@@ -79,6 +93,7 @@ $(document).ready(function($){
     var $section8 = $('#section8');
     var $section9 = $('#section9');
     var $section10 = $('#section10');
+    var $old = $('#old');
     let $sectionEco = $('#sectionECO');
 
     changeCurrentPage();
@@ -157,6 +172,7 @@ $(document).ready(function($){
         } else {
             $guestName.html(`${$firstName.val()} ${$lastName.val()} `);
             $sectionEco.show();
+            $old.hide();
         }
     });
 

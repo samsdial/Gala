@@ -38,7 +38,7 @@
     <div id="theGrid">
       <div class="fixed_navbar">
         <div class="submenu" style="z-index:10000;">
-          <div class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item js-rvsOpen" href="#">RSPV NOW</a><a class="dropdown-item js-details" href="#">GALA DETAILS</a>
+          <div class="dropdown-menu" id="dropdownMenu" aria-labelledby="dropdownMenuLink"><a class="dropdown-item js-rvsOpen" href="#path">RSPV NOW</a><a class="dropdown-item js-details" href="#section2">GALA DETAILS</a>
             <!--a.dropdown-item(href='#') Something else here-->
           </div>
         </div><a class="btn_menu cl--green txt_upper" id="dropdownMenuLink"><span class="icon_menu--svg">
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="right-side">
-            <div class="full_container bgc--white">
+            <div class="full_container bgc--white" id="path" name="ancla">
               <div class="w-100 box_content pd_bottom--x50">
                 <div class="item content_item txt_center pt-5" id="section1">
                   <div class="icon icon_celebrate"></div>
@@ -140,11 +140,18 @@
                     </div>
                   </div>
                   <div class="bdb--gains bdb--x2 w-100 mb-5">
-                    <div class="w-50 mx-auto">
-                      <div class="title txt_upper mb-3">
-                        <div class="txt_two txt_upper txt_bold cl--black txt_size--em2a">Contact us</div>
+                    <div class="row">
+                      <div class="col-12 col-sm-8 mx-auto">
+                        <div class="title txt_upper mb-3">
+                          <div class="txt_two txt_upper txt_bold cl--black txt_size--em2a">Contact us</div>
+                        </div>
+                        <div class="info mb-2 cl--gray mb-5 txt_center">For more information please contact<br>
+                          <div class="txt_bold txt_upper">Livia Calzadilla</div>
+                          <div class="txt_bold txt_upper">BY EMAIL</div><a href="mailto:lcalzadilla@optimeconsulting.com" target="_blank">lcalzadilla@optimeconsulting.com</a>
+                          <div class="txt_bold txt_upper">by phone</div>
+                          <div class="txt_bold txt_upper">954. 639. 1774</div>
+                        </div>
                       </div>
-                      <div class="info mb-2 cl--gray mb-5 txt_center">For more information please contact<br><span class="txt_bold txt_upper">Livia Calzadilla</span></div>
                     </div>
                   </div>
                 </div>
@@ -180,21 +187,21 @@
                   <div class="txt_right">
                     <button class="btn closeSection"><span class="icon icon_close close-button"></span></button>
                   </div>
-                  <div class="bdb--gains bdb--x2 w-100 mb-5">
+                  <div class="bdb--gains bdb--x2 w-100 mb-5" id="old">
                     <div class="w-75 mx-auto">
                       <div class="title txt_upper mb-5 txt_center">
                         <div class="txt_upper txt_bold cl--black txt_size--em3">RVSP Form</div>
                       </div>
                       <form id="formulario">
                         <div class="row">
-                          <div class="col">
+                          <div class="col-12 col-sm-6">
                             <div class="form-group">
                               <label class="txt_bold">First name</label>
                               <input class="form-control firstName" id="firstName" type="text" name="firstName">
                               <div class="alert hidden"><small>Add first names</small></div>
                             </div>
                           </div>
-                          <div class="col">
+                          <div class="col-12 col-sm-6">
                             <div class="form-group">
                               <label class="txt_bold">Last name</label>
                               <input class="form-control lastName" id="lastName" type="text" name="lastName">
@@ -203,7 +210,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col mb-5">
+                          <div class="col-12 mb-5">
                             <div class="form-group">
                               <label class="txt_bold">Email</label>
                               <input class="form-control email" id="email" type="text" name="email">
@@ -212,7 +219,7 @@
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col mb-5">
+                          <div class="col-12 mb-5">
                             <button class="btn btn_submit" id="findMyInvitation">Find my Invitation</button>
                           </div>
                         </div>
@@ -292,9 +299,7 @@
                         <div class="txt_size--em3"> We look foward to <br>  Celebrating with you!</div>
                       </div>
                       <div class="row">
-                        <div class="col mb-5">
-                          <button class="btn btn_submit w-auto closeSection">DONE</button>
-                        </div>
+                        <div class="col mb-5"><a class="btn btn_submit w-auto closeReloat" href="/gala/registration.html">DONE</a></div>
                       </div>
                     </div>
                   </div>
@@ -310,9 +315,7 @@
                         <div class="txt_size--em3">We hope you can join us <br> in future gatherings</div>
                       </div>
                       <div class="row">
-                        <div class="col mb-5">
-                          <button class="btn btn_submit w-auto closeSection">EXIT</button>
-                        </div>
+                        <div class="col mb-5"><a class="btn btn_submit w-auto closeReloat" href="/gala/registation.html">EXIT</a></div>
                       </div>
                     </div>
                   </div>
