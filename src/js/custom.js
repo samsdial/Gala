@@ -7,6 +7,7 @@ $(document).ready(function($){
             $('html, body').animate({
                 scrollTop: $( $(this).attr('href') ).offset().top
             }, 500);
+            $('#dropdownMenu').removeClass('show');
             btnScrollOpen.removeClass('opens');
             return false;
 
@@ -16,10 +17,12 @@ $(document).ready(function($){
     });
     btnScrollOpen2.click(function(){
         btnScrollOpen.addClass('opens');
+        $('#dropdownMenu').removeClass('show');
         if (btnScrollOpen.hasClass('opens')){
             $('html, body').animate({
                 scrollTop: $( $(this).attr('href') ).offset().top
             }, 500);
+
             btnScrollOpen.removeClass('opens');
             return false;
 

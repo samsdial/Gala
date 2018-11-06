@@ -18,6 +18,8 @@
 .dropdown-item
   padding: 1.5rem 3.5rem
 
-.dropdown-item.active, .dropdown-item:active
-  background-color: $green
-  color: white
+.dropdown-item
+  &.active
+  +press
+    background-color: $green
+    color: white
