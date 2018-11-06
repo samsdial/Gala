@@ -2,6 +2,8 @@ $(document).ready(function($){
     var btnScrollOpen = $('a.js-rvsOpen');
     var btnScrollOpen2 = $('a.js-details');
     btnScrollOpen.click(function(){
+        currentPage = 4;
+        changeCurrentPage();
         btnScrollOpen.addClass('opens');
         if (btnScrollOpen.hasClass('opens')){
             $('html, body').animate({
@@ -16,6 +18,8 @@ $(document).ready(function($){
         }
     });
     btnScrollOpen2.click(function(){
+        currentPage = 2;
+        changeCurrentPage();
         btnScrollOpen.addClass('opens');
         $('#dropdownMenu').removeClass('show');
         if (btnScrollOpen.hasClass('opens')){
@@ -28,6 +32,9 @@ $(document).ready(function($){
 
         } else {
             btnScrollOpen.removeClass('opens');
+            $('html, body').animate({
+                scrollTop: $( $(this).attr('href') ).offset().top
+            }, 0);
         }
     });
 
@@ -223,9 +230,9 @@ $(document).ready(function($){
        let value = $(this).val();
 
        if (value === 'option1') {
-           $minisection3.show();
+           $minisection2.show();
        } else {
-           currentPage = 7;
+           currentPage = 6;
            changeCurrentPage();
        }
     });

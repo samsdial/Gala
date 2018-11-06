@@ -24,16 +24,18 @@ input
         label.form-check-label
             width: 100%
             font-size: 1.5rem
-            padding: 12px 1.5em
+            padding: 19px 1.5em
             position: relative
             width: 100%
             height: 60px
             vertical-align: middle
-            color: lightgray
+            color: gray
             font-weight: 600
             transform: $trs-site
             +MQ(S)
                 font-size: 1.6rem
+                padding: 12px 1.5em
+            +MQ(M)
                 padding: 15px 1.5em
             &:after
                 content: ''
@@ -71,3 +73,7 @@ input
     small
         color: $white
         font-weight: 400
+
+.resevation_form .form-check:last-child label
+    @media (max-width: 375px)
+        padding-top: 12px
