@@ -230,9 +230,9 @@ $(document).ready(function($){
        let value = $(this).val();
 
        if (value === 'option1') {
-           $minisection2.show();
+           $minisection3.show();
        } else {
-           currentPage = 6;
+           currentPage = 7;
            changeCurrentPage();
        }
     });
