@@ -14,6 +14,7 @@ $(document).ready(function($){
         currentPage = 4;
         changeCurrentPage();
         btnScrollOpen.addClass('opens');
+        $('#dropdownMenu').removeClass('show');
         if (btnScrollOpen.hasClass('opens')){
             $('html, body').animate({
                 scrollTop: $( $(this).attr('href') ).offset().top
@@ -60,7 +61,6 @@ $(document).ready(function($){
         e.preventDefault();
         btnOpenDrop.toggleClass('opening');
         if (dropmenu.hasClass('show')){
-            //console.log('Agregar show');
             dropmenu.removeClass('show');
         } else {
             dropmenu.addClass('show');
