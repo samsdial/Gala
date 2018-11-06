@@ -2,10 +2,13 @@
   z-index: 10000
   text-align: right
   position: fixed
-  width: 100%
+  width: auto
+  top: 0
+  right: 10px
   +MQ(M)
-    width: 55%
-    text-align: right
+    width: auto
+    top: 0
+    right: 45%
 .submenu
   display: inline-block
   position: relative
@@ -13,6 +16,8 @@
 .dropdown-menu
   border-radius: 0px
   margin-top: 15px
+  left: inherit
+  right: -58px
   .dropdown-item:first-child
     border-bottom: 1px solid $gray
 .dropdown-item
