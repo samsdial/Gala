@@ -195,7 +195,7 @@ $(document).ready(function($){
     let $firstName = $('#firstName');
     let $lastName = $('#lastName');
     let $email = $('#email');
-    let $validacion_email = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+    let validacion_email = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     let $attendingCheckbox = $('input[name="attending"]');
     let $guestCheckbox = $('input[name="myGuest"]');
     let $findMyInvitation = $('#findMyInvitation');
@@ -207,13 +207,17 @@ $(document).ready(function($){
 
     $findMyInvitation.on('click', function(e) {
         e.preventDefault();
-        if ($firstName.val() === "") {
+
+        if ($firstName.val() == "") {
             $('.firstName + .alert').removeClass('hidden');
             $firstName.focus();
-        } else if ($lastName.val() === "") {
+        } else if ($lastName.val() == "") {
             $('.lastName + .alert').removeClass('hidden');
             $lastName.focus();
-        } else if ($email.val() === "" && !$validacion_email.test($email)) {
+        } else if ($email.val() === "") {
+            $('.email + .alert').removeClass('hidden');
+            $email.focus();
+        } else if (!validacion_email.test($email.val())) {
             $('.email + .alert').removeClass('hidden');
             $email.focus();
         } else {
@@ -249,6 +253,15 @@ $(document).ready(function($){
        } else {
            currentPage = 7;
            changeCurrentPage();
+           $.ajax({
+               type: 'POST',
+               url: 'phpsaveNO.php',
+               data: $('form').serialize(),
+               success: function (e) {
+                   currentPage = 6;
+                   changeCurrentPage();
+               }
+           });
        }
     });
 
