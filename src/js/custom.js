@@ -14,6 +14,7 @@ $(document).ready(function($){
         currentPage = 4;
         changeCurrentPage();
         btnScrollOpen.addClass('opens');
+        $('#dropdownMenu').removeClass('show');
         if (btnScrollOpen.hasClass('opens')){
             $('html, body').animate({
                 scrollTop: $( $(this).attr('href') ).offset().top
