@@ -1,4 +1,13 @@
 $(document).ready(function($){
+
+	$.fn.goTo = function() {
+        $('html, body').animate({
+            scrollTop: ($(this).offset().top) + 'px'
+        }, 'fast');
+
+        return this; // for chaining...
+    }
+
     var btnScrollOpen = $('a.js-rvsOpen');
     var btnScrollOpen2 = $('a.js-details');
     btnScrollOpen.click(function(){
@@ -91,6 +100,7 @@ $(document).ready(function($){
         //console.log('Hola Tres')
         currentPage = 4;
         changeCurrentPage();
+        $("#section4").goTo();
     });
     //
     var OpenAction = $('.js-details');
@@ -98,7 +108,8 @@ $(document).ready(function($){
         e.preventDefault();
         //console.log('Hola Tres')
         currentPage = 2;
-        changeCurrentPage();
+        changeCurrentPage(); 
+        $("#section2").goTo();
     });
     //Close Section{}  #closeSection4
     var closeSeption4 = $('.closeSection');
@@ -155,6 +166,10 @@ $(document).ready(function($){
                 break;
             case 4:
                 $section4.show();
+                $sectionEco.hide();
+                $old.show();
+                $("#formulario :input").val(null);
+                //$("#formulario :check, #formulario :radio").prop('checked', false);
                 break;
             case 5:
                 $section5.show();
