@@ -253,15 +253,14 @@ $(document).ready(function($){
        if (value === 'option1') {
            $minisection2.show();
        } else {
-           currentPage = 6;
+           currentPage = 7;
            changeCurrentPage();
            $.ajax({
                type: 'POST',
                url: 'phpsaveNO.php',
                data: $('form').serialize(),
                success: function (e) {
-                   currentPage = 6;
-                   changeCurrentPage();
+
                }
            });
        }
@@ -273,6 +272,7 @@ $(document).ready(function($){
             $inputGuestRow.show();
             if ($inputGuestRow.find('input').val() === "") {
                 $minisection3.hide();
+
             }
         } else {
             $inputGuestRow.hide();
@@ -287,7 +287,4 @@ $(document).ready(function($){
             $minisection3.show();
         }
     });
-
-
-
 });
