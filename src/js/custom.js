@@ -258,8 +258,6 @@ $(document).ready(function($){
                url: 'phpsaveNO.php',
                data: $('form').serialize(),
                success: function (e) {
-                   currentPage = 6;
-                   changeCurrentPage();
                }
            });
        }
